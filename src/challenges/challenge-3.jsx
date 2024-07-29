@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
-export default function Counter() {
+// Task: fix the code
+
+export default function Challenge3() {
   const [count, setCount] = useState(0);
 
   const increment = () => {
@@ -16,7 +18,7 @@ export default function Counter() {
   );
 }
 
-// Task: How to fix the code above?
+// Answer
 
 // Explanation: The state update function should be used with a functional update to ensure it gets the latest state value.
 

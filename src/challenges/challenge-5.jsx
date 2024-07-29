@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-export default function Timer() {
+// Task: Fix the code
+
+export default function Challenge5() {
   const [seconds, setSeconds] = useState(0);
 
   useEffect(() => {
@@ -14,7 +16,8 @@ export default function Timer() {
   return <div>Seconds: {seconds}</div>;
 }
 
-// Task: How to fix the code above?
+
+// Answer
 
 // Explanation: The seconds state in the setInterval callback is captured from the initial render, causing it not to update correctly. The interval should use a functional update.
 

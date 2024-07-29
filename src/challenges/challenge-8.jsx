@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-function App() {
+// Task: Fix the code
+
+export default function Challenge8() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -19,9 +21,8 @@ function App() {
   );
 }
 
-export default App;
 
-// Task: Identify and fix the bug in the code above.
+// Answer 
 
 // Explanation: The event listener is added correctly, but not removed because the dependency array is empty. The effect runs only once, which is fine here, but it’s good practice to include the cleanup properly.
 

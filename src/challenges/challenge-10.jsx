@@ -1,5 +1,7 @@
 import React, { useReducer } from 'react';
 
+// Task: Predict the output
+
 const initialState = { count: 0 };
 
 function reducer(state, action) {
@@ -13,7 +15,7 @@ function reducer(state, action) {
   }
 }
 
-function Counter() {
+export default function Challenge10() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
@@ -25,9 +27,6 @@ function Counter() {
   );
 }
 
-export default Counter;
-
-// Task: What output is provided by this code?
 
 // Answer: Each click on the "Increment" button will increment the count by 1, and each click on the "Decrement" button will decrement the count by 1.
 

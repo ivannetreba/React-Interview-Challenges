@@ -1,10 +1,8 @@
-React Interview Challenges. 
+# React + Vite
 
-Publish in my LinkedIn. 
-Follow me https://www.linkedin.com/in/ivan-netreba/
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Two types of challenges:
-- Fix error
-- Predict output
+Currently, two official plugins are available:
 
-
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh

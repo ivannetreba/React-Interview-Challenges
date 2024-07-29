@@ -1,11 +1,10 @@
-import "./styles.css";
 import React, { useState } from "react";
-import Item from "./Item";
+// import Item from "./Item";
 
-type SomeDTO = { id: number };
+// Task: fix the code
 
-export default function App() {
-  const [list, setList] = useState<SomeDTO[]>([{ id: 1 }, { id: 2 }]);
+export default function Challenge1() {
+  const [list, setList] = useState([{ id: 1 }, { id: 2 }]);
 
   const handleReverseClick = () => {
     setList((old) => old.reverse());
@@ -24,7 +23,8 @@ export default function App() {
   );
 }
 
-// Task: How to fix the code above?
+
+// Answer
 
 // Explanation: The reverse method mutates the original array, causing unexpected behavior in React's state management. We should create a new reversed array to avoid mutating the state directly.
 
@@ -34,10 +34,9 @@ import "./styles.css";
 import React, { useState } from "react";
 import Item from "./Item";
 
-type SomeDTO = { id: number };
 
-export default function App() {
-  const [list, setList] = useState<SomeDTO[]>([{ id: 1 }, { id: 2 }]);
+export default function Challenge1() {
+  const [list, setList] = useState([{ id: 1 }, { id: 2 }]);
 
   const handleReverseClick = () => {
     setList((old) => [...old].reverse());

@@ -1,6 +1,8 @@
 import React, { useState, useCallback } from 'react';
 
-function App() {
+// Task: Predict the output
+
+export default function Challenge7() {
   const [count, setCount] = useState(0);
 
   const increment = useCallback(() => {
@@ -15,9 +17,7 @@ function App() {
   );
 }
 
-export default App;
 
-// Task: What output is provided by this code?
 
 // Answer: Each click on the button will increment the count by 1.
 

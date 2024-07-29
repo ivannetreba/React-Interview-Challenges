@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// Task: Fix the code
+
 function Greeting({ name }) {
   return <h1>Hello, {name}!</h1>;
 }
@@ -9,11 +11,12 @@ Greeting.propTypes = {
   name: PropTypes.string.isRequired
 };
 
-export default function App() {
+export default function Challenge6() {
   return <Greeting />;
 }
 
-// Task: How to fix the code above?
+
+// Answer
 
 // Explanation: The Greeting component requires a name prop but it's not provided in App. This causes a prop types error.
 

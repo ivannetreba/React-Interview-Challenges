@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 
-function App() {
+// Task: predict the output
+
+export default function Challenge4() {
   const [count, setCount] = useState(0);
   const [text, setText] = useState("");
 
@@ -23,10 +25,6 @@ function App() {
   );
 }
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
-
-// Task: What output is provided by this code?
 
 // Answer:
 

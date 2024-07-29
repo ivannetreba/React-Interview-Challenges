@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-function App() {
+// Task: Fix the code
+
+export default function Challenge9() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -14,9 +16,8 @@ function App() {
   );
 }
 
-export default App;
 
-// Task: How to fix the infinite loop in the code above?
+// Answer
 
 // Explanation: The effect depends on count, and since setCount triggers a re-render, it causes an infinite loop.
 
