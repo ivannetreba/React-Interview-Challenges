@@ -18,5 +18,17 @@ export default function Counter() {
 }
 
 
+// Output (in production, without react strict mood)
+// step 1
+// step 2
+// step 5
+
+// Explanation:
+
+// step 1 is logged when App component renders initially.
+// step 2 is logged when the useEffect in App component runs after the initial render.
+// step 5 is logged when the useEffect in Child component runs after Child component renders.
+
+
 
 
