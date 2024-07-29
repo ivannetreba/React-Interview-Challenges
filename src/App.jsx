@@ -14,15 +14,15 @@ function App() {
   return (
     <div>
       {/* <Challenge1 /> */}
-      <Challenge2 />
-      {/* <Challenge3 />
-      <Challenge4 />
-      <Challenge5 />
-      <Challenge6 />
-      <Challenge7 />
-      <Challenge8 />
-      <Challenge9 />
-      <Challenge10 /> */}
+      {/* <Challenge2 /> */}
+      <Challenge3 />
+      {/* <Challenge4 /> */}
+      {/* <Challenge5 /> */}
+      {/* <Challenge6 /> */}
+      {/* <Challenge7 /> */}
+      {/* <Challenge8 /> */}
+      {/* <Challenge9 /> */}
+      {/* <Challenge10 /> */}
     </div>
   )
 }

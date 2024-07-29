@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 
-// Task: fix the code
+// Task: Predict what count will display after click button once?
 
 export default function Challenge3() {
   const [count, setCount] = useState(0);
 
   const increment = () => {
     setCount(count + 1);
-    setCount(count + 1);
+    setCount(count + 2);
+    setCount(count + 3);
   };
 
   return (
@@ -18,27 +19,6 @@ export default function Challenge3() {
   );
 }
 
-// Answer
 
-// Explanation: The state update function should be used with a functional update to ensure it gets the latest state value.
 
-// Fixed Code:
-/*
-import React, { useState } from "react";
-
-export default function Counter() {
-  const [count, setCount] = useState(0);
-
-  const increment = () => {
-    setCount((prevCount) => prevCount + 1);
-    setCount((prevCount) => prevCount + 1);
-  };
-
-  return (
-    <div>
-      <p>{count}</p>
-      <button onClick={increment}>Increment</button>
-    </div>
-  );
-}
-*/
+// Answer: 3

@@ -24,9 +24,7 @@ export default function Challenge1() {
 }
 
 
-// Answer
-
-// Explanation: The reverse method mutates the original array, causing unexpected behavior in React's state management. We should create a new reversed array to avoid mutating the state directly.
+// Answer: The reverse method mutates the original array, causing unexpected behavior in React's state management. We should create a new reversed array to avoid mutating the state directly.
 
 // Fixed Code:
 /*
