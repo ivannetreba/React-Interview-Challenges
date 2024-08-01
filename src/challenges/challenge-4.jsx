@@ -1,36 +1,45 @@
 import React, { useState, useEffect } from "react";
-import ReactDOM from "react-dom";
 
-// Task: predict the output
+// Task: Find 2 mistakes in code below
 
-export default function Challenge4() {
-  const [count, setCount] = useState(0);
-  const [text, setText] = useState("");
+export default function Challenge() {
+  const [seconds, setSeconds] = useState(0);
 
   useEffect(() => {
-    console.log("Effect with count:", count);
-  }, [count]);
+    const interval = setInterval(() => {
+      setSeconds(seconds + 1);
+    }, 1000);
 
-  useEffect(() => {
-    console.log("Effect with text:", text);
-  }, [text]);
+  }, []);
 
-  return (
-    <div>
-      <p>Count: {count}</p>
-      <p>Text: {text}</p>
-      <button onClick={() => setCount(count + 1)}>Increment Count</button>
-      <button onClick={() => setText("New Text")}>Change Text</button>
-    </div>
-  );
+  return <div>Seconds: {seconds}</div>;
 }
 
 
-// Answer:
+// Answer
 
-// Initial render: No logs.
-// Click "Increment Count":
-// Effect with count: 1
-// Click "Change Text":
-// Effect with text: New Text
-// Explanation: Each useEffect hook runs when its dependency changes. The first hook runs when count changes, and the second hook runs when text changes.
+// First mistake: The seconds state in the setInterval callback is captured from the initial render, causing it not to update correctly. The interval should use a functional update.
+
+// Second mistake: Without the cleanup function, the interval will not be cleared when the component unmounts. This means the interval will continue to run indefinitely, causing the setSeconds function to be called every second, even if the Timer component is no longer in the DOM. This can lead to memory leaks and potentially unwanted state updates.
+
+
+
+// Fixed Code:
+
+/*
+import React, { useState, useEffect } from "react";
+
+export default function Timer() {
+  const [seconds, setSeconds] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSeconds((prevSeconds) => prevSeconds + 1);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return <div>Seconds: {seconds}</div>;
+}
+*/
