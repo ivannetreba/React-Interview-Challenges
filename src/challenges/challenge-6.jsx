@@ -33,7 +33,7 @@ Greeting.propTypes = {
   name: PropTypes.string.isRequired
 };
 
-export default function App() {
+export default function Challenge6() {
   return <Greeting name="World" />;
 }
 */
