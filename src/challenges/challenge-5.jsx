@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 
 // Task: Fix 2 mistakes in the code below to see user input in the alert.
 
