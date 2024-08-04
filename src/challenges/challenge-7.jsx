@@ -1,24 +1,33 @@
-import React, { useState, useCallback } from 'react';
+import React, { useEffect, useState } from "react";
 
-// Task: Predict the output
+// Task: predict the output
 
-export default function Challenge7() {
-  const [count, setCount] = useState(0);
+export function PredictLog() {
+  console.log('1');
 
-  const increment = useCallback(() => {
-    setCount(count + 1);
-  }, [count]);
+  useEffect(() => {
+    console.log('2');
+  }, []);
 
-  return (
-    <div>
-      <p>Count: {count}</p>
-      <button onClick={increment}>Increment</button>
-    </div>
-  );
+  return <Child />;
+}
+
+function Child() {
+  console.log('3');
+
+  useEffect(() => {
+    console.log('4');
+  }, []);
+
+  return null;
 }
 
 
 
-// Answer: Each click on the button will increment the count by 1.
 
-// Explanation: useCallback memoizes the increment function, but since count is a dependency, the function is recreated each time count changes. This ensures the correct value of count is used.
+
+// Answer: 1 3 1 4 2 3
+
+
+
+

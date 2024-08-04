@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 // Task: Find 2 mistakes in code below
 
-export default function Challenge4() {
+export function Timer() {
   const [seconds, setSeconds] = useState(0);
 
   useEffect(() => {

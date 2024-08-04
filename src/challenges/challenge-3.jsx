@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 // Task: Predict what count will display after click button once?
 
-export default function Challenge3() {
+export function StateUpdating() {
   const [count, setCount] = useState(0);
 
   const increment = () => {

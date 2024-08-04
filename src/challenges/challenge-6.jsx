@@ -1,40 +1,55 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
 
-// Task: Fix the code
+// Task: What's wrong with this code?
 
-function Greeting({ name }) {
-  return <h1>Hello, {name}!</h1>;
-}
-
-Greeting.propTypes = {
-  name: PropTypes.string.isRequired
+export function UserProfile({ user }) {
+  // return (
+  //   <div>
+  //     <h1>{user.name}</h1>
+  //     <p>City: {user.address.city}</p>
+  //     </div>
+  //   <div>
+  //     <h2>Posts</h2>
+  //     {user.posts.map((post, index) => (
+  //       <div key={index}>
+  //         <h3>{post.title}</h3>
+  //       </div>
+  //     ))}
+  //   </div>
+  // );
 };
 
-export default function Challenge6() {
-  return <Greeting />;
-}
+
 
 
 // Answer
 
-// Explanation: The Greeting component requires a name prop but it's not provided in App. This causes a prop types error.
+// Mistake 1: Multiple JSX elements in return statement without a fragment:
 
-// Fixed Code:
+// The original code returns two <div> elements at the root level, which results in a syntax error because JSX requires a single parent element. Wrapping these elements in a React fragment (<> </>) solves this issue.
+
+// Mistake 2: Lack of optional chaining:
+
+// The original code accesses properties of user directly, which can lead to runtime errors if user or its nested properties (address and posts) are undefined. Using optional chaining (?.) ensures that the code handles undefined values gracefully.
+
+// Fixed code:
 /*
-import React from 'react';
-import PropTypes from 'prop-types';
-
-function Greeting({ name }) {
-  return <h1>Hello, {name}!</h1>;
-}
-
-Greeting.propTypes = {
-  name: PropTypes.string.isRequired
+export function UserProfile({ user }) {
+  return (
+    <>
+      <div>
+        <h1>{user?.name}</h1>
+        <p>City: {user?.address?.city}</p>
+      </div>
+      <div>
+        <h2>Posts</h2>
+        {user?.posts?.map((post, index) => (
+          <div key={index}>
+            <h3>{post.title}</h3>
+          </div>
+        ))}
+      </div>
+    </>
+  );
 };
-
-export default function Challenge6() {
-  return <Greeting name="World" />;
-}
 */
-

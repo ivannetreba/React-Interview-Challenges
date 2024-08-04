@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 // Task: Fix 2 mistakes in the code below to see user input in the alert.
 
-export default function Challenge5() {
+export default function App() {
   const [value, setValue] = useState("");
 
   const handleSubmit = (e) => {
