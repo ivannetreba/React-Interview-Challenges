@@ -1,47 +1,42 @@
-import React, { useState, useEffect } from 'react';
+import { useRef, useEffect, forwardRef } from "react";
 
-// Task: Fix the code
+// What's wrong with this code?
 
-export default function Challenge9() {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    setCount(count + 1);
-  }, [count]);
-
-  return (
-    <div>
-      <p>Count: {count}</p>
-    </div>
-  );
-}
-
-
-// Answer
-
-// Explanation: The effect depends on count, and since setCount triggers a re-render, it causes an infinite loop.
-
-// Fixed Code:
-/*
-import React, { useState, useEffect } from 'react';
-
-function App() {
-  const [count, setCount] = useState(0);
+export function Parent() {
+  const elementRef = useRef();
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setCount((prevCount) => prevCount + 1);
-    }, 1000);
-
-    return () => clearTimeout(timer);
+    console.log(elementRef.current);
+    // expected log: <div>Hello, World!</div>
   }, []);
 
-  return (
-    <div>
-      <p>Count: {count}</p>
-    </div>
-  );
+  return <Child ref={elementRef} />;
 }
 
-export default App;
-*/
+function Child({ ref }) {
+  return <div ref={ref}>Hello, World!</div>;
+};
+
+
+// Answer: We can't pass "ref" as a prop.
+// We need to use the built-in higher-order function forwardRef(props, ref) to achieve this result.
+// To know more, read article: https://dmitripavlutin.com/react-forwardref/
+
+// Fixed code:
+
+// import { useRef, useEffect, forwardRef } from "react";
+
+// export function Parent() {
+//   const elementRef = useRef();
+
+//   useEffect(() => {
+//     console.log(elementRef.current); 
+//     // expected log: <div>Hello, World!</div>
+//   }, []);
+
+//   return <Child ref={elementRef} />;
+// }
+
+// const Child = forwardRef(function (props, ref) {
+//   return <div ref={ref}>Hello, World!</div>;
+// });

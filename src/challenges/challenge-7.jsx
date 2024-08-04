@@ -21,13 +21,3 @@ function Child() {
 
   return null;
 }
-
-
-
-
-
-// Answer: 1 3 1 4 2 3
-
-
-
-
