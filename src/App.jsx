@@ -5,7 +5,7 @@ import { Timer as Challenge4 } from "./challenges/challenge-4"
 import Challenge5 from "./challenges/challenge-5"
 import { UserProfile as Challenge6 } from "./challenges/challenge-6"
 import { PredictLog as Challenge7 } from "./challenges/challenge-7"
-import Challenge8 from "./challenges/challenge-8"
+import { FocusWithRef as Challenge8 } from "./challenges/challenge-8"
 import Challenge9 from "./challenges/challenge-9"
 import Challenge10 from "./challenges/challenge-10"
 import Challenge11 from "./challenges/challenge-11"
@@ -20,8 +20,8 @@ function App() {
       {/* <Challenge4 /> */}
       {/* <Challenge5 /> */}
       {/* <Challenge6 /> */}
-      <Challenge7 />
-      {/* <Challenge8 /> */}
+      {/* <Challenge7 /> */}
+      <Challenge8 />
       {/* <Challenge9 /> */}
       {/* <Challenge10 /> */}
       {/* <Challenge12 /> */}

@@ -1,53 +1,37 @@
-import React, { useState, useEffect } from 'react';
+import React, { useRef } from 'react';
 
-// Task: Fix the code
+// What's wrong with this code?
 
-export default function Challenge8() {
-  const [count, setCount] = useState(0);
+export function FocusWithRef() {
+  const myRef = useRef();
 
-  useEffect(() => {
-    const handleClick = () => setCount((prevCount) => prevCount + 1);
-    window.addEventListener('click', handleClick);
+  myRef.current.focus();
 
-    return () => {
-      window.removeEventListener('click', handleClick);
-    };
-  }, []);
-
-  return (
-    <div>
-      <p>Count: {count}</p>
-    </div>
-  );
+  return <input ref={myRef} />;
 }
 
+// Answer: Have to use useEffect for this type of operations.
 
-// Answer 
+// Explanation: 
+// If you try to call myRef.current.focus() directly within the component's body (i.e., within the function but outside of useEffect), it will run on every render, potentially before the input element is added to the DOM. This can cause errors or unexpected behavior.
 
-// Explanation: The event listener is added correctly, but not removed because the dependency array is empty. The effect runs only once, which is fine here, but it’s good practice to include the cleanup properly.
+// - myRef.current might be undefined during the initial render because the input element hasn't been added to the DOM yet.
 
-// Fixed Code:
-/*
-import React, { useState, useEffect } from 'react';
+// - Calling myRef.current.focus() directly in the function body doesn't guarantee that the DOM element is available.
 
-function App() {
-  const [count, setCount] = useState(0);
+// useEffect ensures that the code inside it runs only after the initial render (and on subsequent updates if dependencies change). By using useEffect, you ensure that the DOM elements are available for manipulation, avoiding errors related to undefined references.
 
-  useEffect(() => {
-    const handleClick = () => setCount((prevCount) => prevCount + 1);
-    window.addEventListener('click', handleClick);
 
-    return () => {
-      window.removeEventListener('click', handleClick);
-    };
-  }, []);
+// Fixed code:
 
-  return (
-    <div>
-      <p>Count: {count}</p>
-    </div>
-  );
-}
+// import React, { useRef, useEffect } from 'react';
 
-export default App;
-*/
+// export function FocusWithRef() {
+//   const myRef = useRef();
+
+//   useEffect(() => {
+//     myRef.current.focus();
+//   }, []);
+
+//   return <input ref={myRef} />;
+// }
