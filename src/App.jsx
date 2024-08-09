@@ -9,7 +9,7 @@
 // import { Parent as Challenge9 } from "./challenges/challenge-9"
 // import Challenge10 from "./challenges/challenge-10"
 // import Challenge11 from "./challenges/challenge-11"
-import { Parent } from "./challenges/challenge-10"
+import { Parent as Challenge10 } from "./challenges/challenge-10"
 
 
 function App() {
@@ -25,8 +25,6 @@ function App() {
       {/* <Challenge8 /> */}
       {/* <Challenge9 /> */}
       {/* <Challenge10 /> */}
-      {/* <Challenge12 /> */}
-      <Parent />
     </div>
   )
 }
