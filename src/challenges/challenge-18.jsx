@@ -14,3 +14,4 @@ export function Button() {
 }
 
 
+// Answer: We don't need to call the function handleClick in onClick. React will call the function when the button is clicked.
