@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 
 // How to make this component better?
+// not published
 
 const PostLayout = ({ children }) => {
   const [progress, setProgress] = useState(0);
@@ -8,7 +9,7 @@ const PostLayout = ({ children }) => {
   const onScroll = () => {
     setProgress(window.scrollY);
   };
-  
+
   useEffect(() => {
     window.addEventListener("scroll", onScroll);
   }, []);
