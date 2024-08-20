@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 // Task: fix the code
 
-export default function Challenge1() {
+export default function App() {
   const [list, setList] = useState([{ id: 1 }, { id: 2 }]);
 
   const handleReverseClick = () => {
@@ -33,7 +33,7 @@ import React, { useState } from "react";
 import Item from "./Item";
 
 
-export default function Challenge1() {
+export default function App() {
   const [list, setList] = useState([{ id: 1 }, { id: 2 }]);
 
   const handleReverseClick = () => {
