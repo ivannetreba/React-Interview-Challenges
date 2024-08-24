@@ -1,14 +1,11 @@
 import React, {useState, useEffect} from "react";
 
-// How to make this component better?
-// not published
+// How to prevent memory leak in this component?
 
 const PostLayout = ({ children }) => {
   const [progress, setProgress] = useState(0);
 
-  const onScroll = () => {
-    setProgress(window.scrollY);
-  };
+  const onScroll = () => setProgress(window.scrollY);
 
   useEffect(() => {
     window.addEventListener("scroll", onScroll);
@@ -23,15 +20,16 @@ const PostLayout = ({ children }) => {
 };
 
 
+// Answer: we need to add a cleanup function to the return statement of useEffect to prevent memory leak.
 
 // Fixed code
 
 // const PostLayout = ({ children }) => {
-//   const [progress, setProgress] = React.useState(0);
-//   const onScroll = () => {
-//     setProgress(window.scrollY);
-//   };
-//   React.useEffect(() => {
+//   const [progress, setProgress] = useState(0);
+
+//   const onScroll = () => setProgress(window.scrollY);
+
+//   useEffect(() => {
 //     window.addEventListener("scroll", onScroll);
 
 //     return () => {
