@@ -1,5 +1,4 @@
 // Will JSX inside conditional rendering render?
-// unpublished
 
 export default function App() {
   const array = []
