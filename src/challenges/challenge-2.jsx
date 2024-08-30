@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 // Task: predict the output
 
-export default function Challenge2() {
+export default function App() {
   const [count, setCount] = useState(1);
 
   console.log('1');

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-// Task: Find 2 mistakes in code below
+// Task: Find all mistakes in code below
 
 export function Timer() {
   const [seconds, setSeconds] = useState(0);
@@ -10,7 +10,7 @@ export function Timer() {
       setSeconds(seconds + 1);
     }, 1000);
 
-  }, []);
+  });
 
   return <div>Seconds: {seconds}</div>;
 }
@@ -22,7 +22,7 @@ export function Timer() {
 
 // Second mistake: Without the cleanup function, the interval will not be cleared when the component unmounts. This means the interval will continue to run indefinitely, causing the setSeconds function to be called every second, even if the Timer component is no longer in the DOM. This can lead to memory leaks and potentially unwanted state updates.
 
-
+// it needs a dependency array in useEffect
 
 // Fixed Code:
 

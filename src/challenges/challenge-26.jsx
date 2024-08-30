@@ -1,16 +1,22 @@
 // What's wrong with the following code?
 
-// add more mistakes like this
-// Next.js show error with hydration.
-
-export default function Home() {
+export default function App() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main>
       <p>
         <div>Test</div>
       </p>
+      <ul>
+        <button>Click me</button>
+      </ul>
+      <span>
+        <h1>Title</h1>
+      </span>
     </main>
   );
 }
 
-// Answer: we can't use the div element as a child of the p element.
+// Answer:
+// 1. We can't use the div element as a child of the p element.
+// 2. We can't use the button element as a direct child of the ul element.
+// 4. We can't use the h1 element as a child of the span element. The span element is an inline element, while h1 is a block-level element.
